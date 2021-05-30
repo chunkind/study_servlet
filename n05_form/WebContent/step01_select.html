@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2 align="center">Select Form Test..</h2><p>
+<form action="SelectServlet" method="get">
+	<label for="name">이름 : </label>
+	<input type="text" name="name" id="name"><p>
+	<label for="password">암호 : </label>
+	<input type="password" name="password" id="password"><p><br>
+	<b>당신의 취미를 선택하세요.</b><br><br>
+	<select name="hobby" multiple="multiple">
+		<option value="Reading">Reading</option>
+		<option value="Drinking">Drinking</option>
+		<option value="Sleeping">Sleeping</option>
+		<option value="Music">Music</option>
+		<option value="Driving">Driving</option>
+	</select><br>
+	<hr>
+	<!--
+		hidden 태그가 어떻게 사용되는지 나중에.. 웹브라우저에 값이 노출되지 않고 
+		 서버로 그대로 전송되어진다.
+	 -->
+	<input type="hidden" name="command" value="register">
+	<input type="submit" value="send">
+</form>
+</body>
+</html>

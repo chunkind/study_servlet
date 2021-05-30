@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form에 입력된 값을 EL을 사용한 View page에서 처리하기</title>
+</head>
+<body bgcolor="yellow">
+<h2 align="center">Form 값을 받아서 EL로 출력하기</h2><p>
+<form action="formEL2_view.jsp" method="post">
+아이디 : <input type="text" name="id"><br><br>
+<b>다음중 회원님이 키우고 있는 애완동물을 모두 선택하세요.</b><p>
+멍멍이 <input type="checkbox" name = "pet" value="멍멍이"> 
+도둑게  <input type="checkbox" name = "pet" value="도둑게"> 
+금붕어 <input type="checkbox" name = "pet" value="금붕어"> 
+앵무새  <input type="checkbox" name = "pet" value="앵무새">
+햄스터 <input type="checkbox" name = "pet" value="햄스터"><p>
+<input type="submit" value="선택하기">
+<input type="reset" value="취소하기">
+</form>
+</body>
+</html>

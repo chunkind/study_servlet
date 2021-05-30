@@ -1,0 +1,7 @@
+1|Spring|2011|Soccer League (Spring '11)
+2|Summer|2011|Summer Soccer Fest 2011
+3|Fall|2011|Fall Soccer League (2011)
+4|Spring|2012|Soccer League (Spring '12)
+5|Summer|2012|The Summer of Soccer Love 2012
+6|Fall|2012|Fall Soccer League (2012)
+7|Winter|2012|Winter Soccer League (2012)

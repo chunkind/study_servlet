@@ -1,0 +1,5 @@
+4|mj|Professional
+4|mj|Semi-Pro
+4|mj|Amateur
+1|mj|Semi-Pro
+1|cmj|Professional

@@ -1,0 +1,55 @@
+page이동:"서버상에서"
+1. Request Dispatcher방식
+2. Redirect방식
+
+1번을 쓰는경우 : 
+	
+	Attribute 데이타를 저장해 놓는 스토리지 이다.
+1. servletRequest
+2. httpSession
+3. ServletContext
+
+저장방식은 map방식으로 되어 있음.
+위 3개는 기능 변함은 없는데 서로 다른 객체가 있을땐 아주 중요한 차이가 있다.
+방향성은 1번과 2번
+데이타를 보관하는 저장소는 attribute
+scope--> 데이타를 보관하는 유효기간이 다름.
+응답하는 순간 서블릿 리퀘스트는 죽는다.
+유통기한은 요청했다가 응답하는 순간.
+서버는 동시접속하는 클라이언트가 많다//////
+단순검색(대표적인 예)은 서블릿 리퀘스트 (응답하는 즉시 끝남)
+세션은 데이타를 로그인이 진행되는 동안엔 저장이된다.
+
+
+
+2번을 쓰는경우 :
+ request.getRequestDispatcher("절대 경로");
+			      "상대 경로"
+
+ context.getRequestDispatcher("절대 경로");
+
+
+ <%
+
+%>    <- 얜 자바 코드만 들어감.
+
+forward 와 include의 차이점.
+
+forward : 이동할 페이지
+		out.println은 절대 출력이 안된다!
+include : 포함될 페이지
+		out.println은 절대 출력 된다.
+
+1. RequestDispatcher - forward()
+		       include()
+2. Redirect
+
+
+1번은 서버상의 Companent끼리만 이동 가능.
+ --> 속도 빠르다, 한번의 요청~ 한번의 응답.
+2번은 보여지기는 한번의 요청으로 응답이 일어난 것 같지만 실제로는 두번 왔다갔다 한다.
+(왜? A한테 요청했는데 A가 모른다는 응답이 와서 B한테 다시 요청해서 다시 응답이 오느라고..)
+같은 서버의 page 뿐만 아니라 다른 서버의 page로도 이동가능.
+
+1번의 Attribute 는 ServletRequest를 써주는게 좋다.
+2번의 Attribute 는 HttpSession만 가능하다.(ServletContext)

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+ *	나이를 문자로 입력하면 숫자 입력하라고 띄우고 이동을 금지.
+ 	나이가 19세 미만이면 성인이 아닙니다 문자 띄우고 이동금지
+	위의 두 경우가 아닐때만 사이트를 이동함.
+ */
+ function checkData() {
+	var f = document.enteranceForm;
+	if(isNaN(f.age.value)){
+		alert("나이는 숫자로 입력!!");
+		return false;
+	}else if(f.age.value<20){
+		alert("성인이 아닙니다.");
+		return false;
+	}else{
+		alert("성인이므로 카페 입장을 허용합니다..");
+	}
+}
+</script>
+</head>
+<body>
+<h2 align="center"><b>Cafe 입장을 환영합니다..</b></h2><p>
+	<form action="EnteranceServlet" method="post" name="enteranceForm" onsubmit="return checkData()">
+	Name : <input type="text" name="name" required="required"><p>
+	Age : <input type="text" name="age" required="required"><p>
+	<input type="submit" value="Cafe 입장하기">
+</form>
+</body>
+</html>

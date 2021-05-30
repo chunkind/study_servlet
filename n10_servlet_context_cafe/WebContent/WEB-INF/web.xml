@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<filter>
+		<filter-name>EncodingFilter</filter-name>
+		<filter-class>filter.EncodingFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<description></description>
+		<display-name>RegisterMemberServlet</display-name>
+		<servlet-name>RegisterMemberServlet</servlet-name>
+		<servlet-class>context.controller.RegisterMemberServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterMemberServlet</servlet-name>
+		<url-pattern>/RMS</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>FindMemberServlet</display-name>
+		<servlet-name>FindMemberServlet</servlet-name>
+		<servlet-class>context.controller.FindMemberServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindMemberServlet</servlet-name>
+		<url-pattern>/FMS</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>FindAddressMemberServlet</display-name>
+		<servlet-name>FindAddressMemberServlet</servlet-name>
+		<servlet-class>context.controller.FindAddressMemberServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindAddressMemberServlet</servlet-name>
+		<url-pattern>/FAMS</url-pattern>
+	</servlet-mapping>
+</web-app>

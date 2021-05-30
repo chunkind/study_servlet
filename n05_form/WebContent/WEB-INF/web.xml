@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	
+	<display-name>web05_Form</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+		<description></description>
+		<display-name>SelectServlet</display-name>
+		<servlet-name>SelectServlet</servlet-name>
+		<servlet-class>form.step01.SelectServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SelectServlet</servlet-name>
+		<url-pattern>/SelectServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description></description>
+		<display-name>CheckBoxServlet</display-name>
+		<servlet-name>CheckBoxServlet</servlet-name>
+		<servlet-class>form.step02.CheckBoxServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CheckBoxServlet</servlet-name>
+		<url-pattern>/CBS1</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description></description>
+		<display-name>ChoiceDogServlet</display-name>
+		<servlet-name>ChoiceDogServlet</servlet-name>
+		<servlet-class>form.step03.ChoiceDogServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ChoiceDogServlet</servlet-name>
+		<url-pattern>/ChoiceDog</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<display-name>MultiFormServlet</display-name>
+		<servlet-name>MultiFormServlet</servlet-name>
+		<servlet-class>form.step04.MultiFormServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MultiFormServlet</servlet-name>
+		<url-pattern>/MFS4</url-pattern>
+	</servlet-mapping>
+	
+</web-app>

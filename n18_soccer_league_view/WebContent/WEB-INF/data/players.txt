@@ -1,0 +1,5 @@
+mj|bucheon|bucheon|1|12
+mj|bucheon|bucheon|1|12
+mj|bucheon|bucheon|1|12
+mj|bucheon|bucheon|12|12
+cmj|seoul|seoul|11|11

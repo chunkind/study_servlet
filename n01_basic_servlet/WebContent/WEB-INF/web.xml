@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+						http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+
+	<!-- genericTest1 -->
+	<servlet>
+		<servlet-name>GenericTest1</servlet-name>
+		<servlet-class>basic.step1.GenericTest1</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GenericTest1</servlet-name>
+		<url-pattern>/TEST1</url-pattern>
+	</servlet-mapping>
+
+	<!-- genericTest2 -->
+	<servlet>
+		<description>GenericServlet을 상속받아 작성한 서블릿</description>
+		<display-name>GenericTest2</display-name>
+		<servlet-name>GenericTest2</servlet-name>
+		<servlet-class>basic.step2.GenericTest2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GenericTest2</servlet-name>
+		<url-pattern>/TEST2</url-pattern>
+	</servlet-mapping>
+
+	<!-- HttpServletTest3 -->
+	<servlet>
+		<description>HttpServlet을 상속받아 작성한 클래스</description>
+		<display-name>HttpServletTest3</display-name>
+		<servlet-name>HttpServletTest3</servlet-name>
+		<servlet-class>basic.step3.HttpServletTest3</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HttpServletTest3</servlet-name>
+		<url-pattern>/TEST3</url-pattern>
+	</servlet-mapping>
+
+	<!-- HttpServletTest4 -->
+	<servlet>
+		<description></description>
+		<display-name>HttpServletTest4</display-name>
+		<servlet-name>HttpServletTest4</servlet-name>
+		<servlet-class>basic.step4.HttpServletTest4</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HttpServletTest4</servlet-name>
+		<url-pattern>/TEST4</url-pattern>
+	</servlet-mapping>
+
+</web-app>

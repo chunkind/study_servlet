@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Resource
+		name="jdbc/oracleDB"
+		auth="Container"
+		type="javax.sql.DataSource"
+		username="victory"
+		password="victory123"
+		driverClassName="oracle.jdbc.driver.OracleDriver"
+		factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
+		url="jdbc:oracle:thin:@victory.cs8zfdntdlzp.ap-northeast-2.rds.amazonaws.com:1521:orcl"
+		maxActive="500"
+		maxIdle="30"	
+	/>
+</Context>
+
+
+
+
+
+
+
+
+
+
+
+

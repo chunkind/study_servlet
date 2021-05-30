@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+어떤 이상형도 선택하지 않으면 alert창으로 이상열을 한명 이상 선택..
+선택했으면 checkbox7_action.jsp 로 페이지를 이동.. 이때 값이 함께 전송되도록
+
+선택된 값의 이미지가 웹으로 띄워지도록 로직을 작성..
+
+ -->
+<script type="text/javascript">
+	function chooseAngel() {
+		var ca = document.frm.angel;
+		//alert(ca);
+		var flag = false;
+		for(i=0; i<ca.length; i++){
+			if(ca[i].checked){
+				flag = true;
+				break;
+			}// if
+		}// for
+		if(flag==false) alert("이상형을 한 명이상 선택하세요. Try Again");
+		else document.frm.submit();
+	}
+</script>
+</head>
+<body>
+<form action="checkbox7_action.jsp" method="post" name="frm">
+<h2><font color='red'>당신의 이상형을 선택하세요.</font></h2><p>
+<input type="checkbox" name="angel" value="김유정">김유정 <br><br>
+<input type="checkbox" name="angel" value="율리아">율리아   <br><br>
+<input type="checkbox" name="angel" value="김연아">김연아  <br><br>
+<input type="checkbox" name="angel" value="아사다마오">아사다마오 <br><br>
+<input type="checkbox" name="angel" value="치 타">치 타   <br><br>
+<input type="button" value="사진찍기" onclick="chooseAngel()">
+</form>
+</body>
+</html>

@@ -1,0 +1,83 @@
+servletConfig는 사실 안중요하다 여기서 나오는 servletconText가 중요한 것이다!
+
+servletRequest:	getParameter()
+				getParameterValues() 등이 있다 이것들은		(요청시)Form에 입력된 값을 서블릿에게 전달
+
+servletConfig :	getInitParameter()
+				getInitParameterNames() 얘네도 서블릿에게 값을 전달. 하지만 Form에 있는 값은 못가져 온다.
+				왜?? 서블릿이 만들어진 시점이 요청하기도 전에 만들어져 있어서.. 클라이언트랑은 상관 없다.
+
+servletConfig가 하는일 : A servlet Initialization
+			 
+
+servletConfig에는 값을 가져오는건 겟이닛파라미터가 있고 html form에 있는건 못가져 온다.
+container에서 설정한 정보를 가지고 servlet에 박아야 한다. 이때 getInitParameter가 생긴다.
+이런 자원들은 외부자원(Extra Resource)이라 한다.
+
+DD는 루트 태그가 <web----app>로 시작된다.
+하나의 태그를 가르키는 건 <servlet> 이다.
+이 안에는 <s-n>
+	  <s-c>
+	  <init-parameter>
+		<param-name>
+		<param-value>
+	  <init-parameter>
+
+DD를 읽는다.
+1. 서블릿 생성 -> 기본 생성자 호출(서블릿의 초기화가 안됨)
+2. servletConfig 생성.( servlet당 servletConfing한개씩 배정됨)
+3. init( ) 호출시 config가 인자값으로 passing into
+* Container 차원에서 설정한 정보 = 외부자원.
+
+----------------------------------------------------------------------------------------------------------------------
+				Association
+servletConfig	--------------------->>>>>>>>>>>>>>>>>>>>>			ServletContext						ServletContext
+													
+getInitParameter()													getInitparametor()					1. 정의
+getInitParameterNames()												getInitParameterNames()			   		: Servlet들간에 Communication(정보(Data)교류)을 가능케 해주는 객체.
+getServletContext()													------------------------		
+																	SetAttribute( , )					2. Container 차원의 초기화를 가능케 해주는 객체.  
+																	getAttribute()				 			* Container 차원의 초기화 = Grobal 차원의 초기화. *
+																	removeAttribute()			
+																	------------------------			2번 설명은 A라는 서블릿과 B라는 서블릿이 있는데 A서블릿 안에 셋팅된
+																	getResourceAsStream()				☆을 B도 써야 한다. 곧 정보교환!(data)
+																	getRequestDispatcher()		
+													 													Login			장바구니
+																										class A{	|	class B{
+													   														☆		|		A a=new A();
+													 													}			|		a.☆=별;
+																													|	}
+A에 있는 정보를 B가 그대로 가지고 와야 한다. 그리고 B는 B대로 정보를 돌려서 자기만에 정보가 있을 것이다.
+서버 사이드 프로그램에서는 객체 생성을 컨테이너가 하기 때문에 객체를 하나 만든다. 그리고 A가 해야할 일이있다.
+요청에 대한 처리! 그리고 반드시 하나를 더 한다! 뭘? doget에서 만들어진 별을 때려박아야 한다! 어디다가? 빈 공간에다가!
+그래서 별은 A에도 있고 빈공간에도 있다 그럼 B는 빈공간에 있는 별을 가져다 쓴다. 여기서 빈공간은 ServletContext라고 한다!
+박는건 setAttribute(Writing) , 가져가는건 getAttribute(Reading) 이다. 그리고 이건 동시에 안일어난다!. 
+서블릿이 먼저 만들어 질까? ServletContext가 먼저 만들어 질까? 정답은 ServletContext가 먼저 만들어 진다.
+
+--------------------------------------	WritingServlet	--------------------------------------
+init(){
+1. HashMap 생성.
+2. context(얜 필드에 선언한다.) = ServletContext();
+
+doGet() {
+1. 폼에 입력된 값 받아서 (아뒤,비번,주소) 
+2. Map에 저장.
+3. ServletContext 에 Writing 한다. ★
+
+----------------------------------------------------------------------------------------------
+
+
+--------------------------------------	ReadingServlet	--------------------------------------
+init() {
+1.
+2.
+
+doGet() {
+1. sc에서 Reading
+2. id, p/w, name
+3. 브라우저로 출력		1번, 2번, 3번   --> jsp로
+----------------------------------------------------------------------------------------------
+
+
+
+

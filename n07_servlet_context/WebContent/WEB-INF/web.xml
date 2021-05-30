@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	
+	<!-- Context param 설정. -->
+	<context-param>
+		<param-name>userName1</param-name>
+		<param-value>공유</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>userName2</param-name>
+		<param-value>아이유</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>userName3</param-name>
+		<param-value>정우성</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>userFile</param-name>
+		<param-value>WEB-INF/member.txt</param-value>
+	</context-param>
+	
+	
+	
+	<!-- Servlet 설정 -->
+	<!-- step01 -->
+	<servlet>
+		<servlet-name>ServletContextParam</servlet-name>
+		<servlet-class>servlet.context.step01.ServletContextParam</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletContextParam</servlet-name>
+		<url-pattern>/SCP</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<!-- step02 -->
+	<servlet>
+		<servlet-name>WritingServlet</servlet-name>
+		<servlet-class>servlet.context.step02.WritingServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WritingServlet</servlet-name>
+		<url-pattern>/WS</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ReadingServlet</servlet-name>
+		<servlet-class>servlet.context.step02.ReadingServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ReadingServlet</servlet-name>
+		<url-pattern>/RS</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- step03 -->
+	<listener>
+		<listener-class>servlet.listener.step03.MyServletListener</listener-class>
+	</listener>
+	
+	
+</web-app>

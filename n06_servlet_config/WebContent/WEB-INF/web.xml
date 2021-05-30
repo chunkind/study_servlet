@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+
+	<!-- 
+		<load-on-startup>1</load-on-startup>
+		서블릿은 최초로 요청이 들어올때 초기화 된다.
+		그러므로 처음 요청한 사용자는 상대적으로 요청 시간이 더 길어지게 마련이다. 
+		그것을 방지하기 위해서, <load-on-startup>1</load-on-startup> 설정이 필요하다. 
+		여기에 들어가는 숫자가 0보다 크면 서버가 스타트 되면서 서블릿을 초기화 한다.
+		서블릿이 여러개 일 경우 해당 설정이 여러번 되어있었을때
+		가장 낮은 수가 가장 먼저 초기화 된다. 그랬을경우 같은 수가 두번 나온다면   
+		먼저 작성된 서블릿부터 초기화된다.
+	-->
+	<!-- 예제 1 -->
+	<servlet>
+		<description></description>
+		<display-name>ServletConfig1</display-name>
+		<servlet-name>ServletConfig1</servlet-name>
+		<servlet-class>config.step01.ServletConfig1</servlet-class>
+		<init-param>
+			<param-name>name</param-name>
+			<param-value>JS</param-value>
+		</init-param>
+		<init-param>
+			<param-name>addr</param-name>
+			<param-value>부천</param-value>
+		</init-param>
+		<init-param>
+			<param-name>email</param-name>
+			<param-value>JS@naver.com</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletConfig1</servlet-name>
+		<url-pattern>/SC1</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 예제 2 -->
+	<servlet>
+		<servlet-name>EnglishGreetServlet2</servlet-name>
+		<servlet-class>config.step02.InternationalGreetServlet2</servlet-class>
+		<init-param>
+			<param-name>greeting</param-name>
+			<param-value>Welcome to the Olymphic............
+   	 			  Today is Schdule.................
+   	 			  Have a Good Time.............
+ 	 		</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EnglishGreetServlet2</servlet-name>
+		<url-pattern>/EnGreet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>FrenchGreetServlet2</servlet-name>
+		<servlet-class>config.step02.InternationalGreetServlet2</servlet-class>
+		<init-param>
+			<param-name>greeting</param-name>
+			<param-value>Bongour Mouchu............
+   	 			  Bongour Madam.................
+   	 			  Bongour Mouchu hhh.............
+   	 		</param-value>
+		</init-param>
+		<load-on-startup>3</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FrenchGreetServlet2</servlet-name>
+		<url-pattern>/FrGreet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>KoreaGreetServlet2</servlet-name>
+		<servlet-class>config.step02.InternationalGreetServlet2</servlet-class>
+		<init-param>
+			<param-name>greeting</param-name>
+			<param-value>안녕하세요............
+   	 			  반갑습니다.................
+   	 			  오늘 날씨는 어떻나요?.............
+   	 </param-value>
+		</init-param>
+		<load-on-startup>4</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>KoreaGreetServlet2</servlet-name>
+		<url-pattern>/KrGreet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 예제 3 -->
+	<servlet>
+		<description></description>
+		<display-name>UsingConfigCountStore3</display-name>
+		<servlet-name>UsingConfigCountStore3</servlet-name>
+		<servlet-class>config.step03.UsingConfigCountStore3</servlet-class>
+		<init-param>
+			<param-name>path</param-name>
+			<param-value>c:\\data\\countLog.txt</param-value>
+		</init-param>
+		<load-on-startup>5</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UsingConfigCountStore3</servlet-name>
+		<url-pattern>/UsingConfig3</url-pattern>
+	</servlet-mapping>
+</web-app>

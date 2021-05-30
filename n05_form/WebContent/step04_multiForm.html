@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2 align="center">Multi Form Test..</h2>
+<form action="MFS4" method="post" id="frm">
+	ID : <input type="text" name="id" value="jun sung"><p>
+	HOBBY :
+	영화보기 <input type="Checkbox" name="hobby" value="movie">
+	음악감상 <input type="Checkbox" name="hobby" value="music">
+	산책하기 <input type="Checkbox" name="hobby" value="walking">
+	드라이브 <input type="Checkbox" name="hobby" value="driving"><p>
+	
+	성별 : 여<input type="radio" name="gender" value="female">
+	남<input type="radio" name="gender" value="male">
+	
+	<input type="hidden" name="command" value="register"><p>
+	<hr>
+	<select name="tel" multiple="multiple">
+		<option>010</option>
+		<option>011</option>
+		<option>016</option>
+		<option>017</option>
+		<option>019</option>
+	</select>
+	<p>
+	<hr>
+	<!-- textarea는 다른 태그와 다르게. 반드시 닫는 태크가 있어야 한다. -->
+	<textarea rows="10" cols="60" name="intro">사이트를 방문해 주셔서 감사합니다.</textarea>
+	<input type="submit" value="send">
+	<input type="reset" value="clear">
+	<input type="button" value="click">
+</form>
+</body>
+</html>

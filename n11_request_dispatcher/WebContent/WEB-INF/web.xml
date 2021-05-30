@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<filter>
+		<filter-name>EncodingFilter</filter-name>
+		<filter-class>filter.EncodingFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<description></description>
+		<display-name>SearchMemberServlet</display-name>
+		<servlet-name>SearchMemberServlet</servlet-name>
+		<servlet-class>servlet.controller.SearchMemberServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SearchMemberServlet</servlet-name>
+		<url-pattern>/SearchMemberServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ResultMemberServlet</display-name>
+		<servlet-name>ResultMemberServlet</servlet-name>
+		<servlet-class>servlet.controller.ResultMemberServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ResultMemberServlet</servlet-name>
+		<url-pattern>/ResultMemberServlet</url-pattern>
+	</servlet-mapping>
+</web-app>

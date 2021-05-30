@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	
+	<!-- servlet 예제1 -->
+	<display-name>web02_HttpServlet</display-name>
+	<servlet>
+		<servlet-name>BasicServlet</servlet-name>
+		<servlet-class>basic.step1.BasicHttpServlet1</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BasicServlet</servlet-name>
+		<url-pattern>/Basic</url-pattern>
+	</servlet-mapping>
+
+	<!-- servlet 예제2 -->
+	<servlet>
+		<description></description>
+		<display-name>FormNameServlet</display-name>
+		<servlet-name>FormNameServlet</servlet-name>
+		<servlet-class>basic.step2.FormNameServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FormNameServlet</servlet-name>
+		<url-pattern>/FN</url-pattern>
+	</servlet-mapping>
+	
+	<!-- servlet 예제3 -->
+	<servlet>
+		<description></description>
+		<display-name>FormServlet</display-name>
+		<servlet-name>FormServlet</servlet-name>
+		<servlet-class>basic.step3.FormServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FormServlet</servlet-name>
+		<url-pattern>/FormServlet</url-pattern>
+		<url-pattern>/frm</url-pattern>
+	</servlet-mapping>
+	
+</web-app>

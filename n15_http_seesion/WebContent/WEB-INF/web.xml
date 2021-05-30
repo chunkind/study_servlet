@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <filter>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>filter.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FirstSession</display-name>
+    <servlet-name>FirstSession</servlet-name>
+    <servlet-class>sevlet.Session.FirstSession</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FirstSession</servlet-name>
+    <url-pattern>/FirstSession</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SecondSession</display-name>
+    <servlet-name>SecondSession</servlet-name>
+    <servlet-class>sevlet.Session.SecondSession</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SecondSession</servlet-name>
+    <url-pattern>/SecondSession</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ThirdSession</display-name>
+    <servlet-name>ThirdSession</servlet-name>
+    <servlet-class>sevlet.Session.ThirdSession</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ThirdSession</servlet-name>
+    <url-pattern>/ThirdSession</url-pattern>
+  </servlet-mapping>
+</web-app>
