@@ -16,7 +16,6 @@ public class HttpServletTest3 extends HttpServlet {
 		out.println("<html><body bgcolor = 'yellow'>");
 		out.println("<h2>Hello HttpServler..</h2>");
 		out.println("</body></html>");
-		
 		out.close();
 	}
 }
